@@ -141,7 +141,7 @@
 	  justify-content: center;
 	  /*margin-top: clamp(-180px, 50vw, -1050px);      смещаем выше блока */
 	  /*margin-left: clamp(80px, 50vw, 800px);   смещаем правее блока */
-	  width: clamp(40px, 35vw, 600px);   /* ширина картинки */
+	  width: clamp(30px, 35vw, 600px);   /* ширина картинки */
 	  transform: translate(150%, -67%);
 	  height: auto;
 	  border-radius: 8px;
