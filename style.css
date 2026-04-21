@@ -71,7 +71,7 @@
 	  pointer-events: none;	  
 	  background-repeat: no-repeat;
 	  background-position: right 10% center;
-	  background-size: clamp(590px, 100vw, 970px);
+	  background-size: clamp(470px, 100vw, 970px);
 	  z-index: 1;
 	}
 	.hero .layer1 {
@@ -141,8 +141,8 @@
 	  justify-content: center;
 	  /*margin-top: clamp(-180px, 50vw, -1050px);      смещаем выше блока */
 	  /*margin-left: clamp(80px, 50vw, 800px);   смещаем правее блока */
-	  width: clamp(30px, 35vw, 600px);   /* ширина картинки */
-	  transform: translate(150%, -67%);
+	  width: clamp(30px, 30vw, 600px);   /* ширина картинки */
+	  transform: translate(190%, -67%);
 	  height: auto;
 	  border-radius: 8px;
 	  z-index: 2;     /* поверх фонового слоя */
@@ -1141,5 +1141,38 @@
 
 	  .time {
 		font-size: 13px;
+	  }
+	}
+		@media (max-width: 768px) {
+	  .light-hero {
+		align-items: center;          /* всё по центру */
+		text-align: center;
+		padding-left: 20px;
+		padding-right: 20px;
+	  }
+
+	  .light-hero h3,
+	  .light-hero .details,
+	  .line {
+		text-align: center;
+		margin-left: 0;
+	  }
+
+	  .line {
+		margin: 10px auto;            /* линия по центру */
+	  }
+
+	  .hero-image {
+		position: static;             /* ❗ убираем absolute */
+		margin-top: 20px;
+	  }
+
+	  .hero-image img {
+		position: static;             /* ❗ убираем absolute */
+		transform: none;              /* ❗ убираем сдвиги */
+		width: 42vw;                   /* адаптивный размер */
+		max-width: 300px;
+		margin: 0 auto;
+		display: block;
 	  }
 	}
