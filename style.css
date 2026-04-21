@@ -1143,7 +1143,7 @@
 		font-size: 13px;
 	  }
 	}
-		@media (max-width: 768px) {
+		@media (max-width: 400px) {
 	  .light-hero {
 		align-items: center;          /* всё по центру */
 		text-align: center;
@@ -1170,7 +1170,7 @@
 	  .hero-image img {
 		position: static;             /* ❗ убираем absolute */
 		transform: none;              /* ❗ убираем сдвиги */
-		width: 42vw;                   /* адаптивный размер */
+		width: 40vw;                   /* адаптивный размер */
 		max-width: 300px;
 		margin: 0 auto;
 		display: block;
