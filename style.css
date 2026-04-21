@@ -1,0 +1,1142 @@
+/* =========================
+   Dance Regular
+========================= */
+@font-face {
+    font-family: "Dance Regular";
+    src: url(/sitemaker/fonts/dance-Regular.eot);
+    src: url(/sitemaker/fonts/dance-Regular.eot?#iefix)format("embedded-opentype"),url(/sitemaker/fonts/dance-Regular.woff2)format("woff2"),url(/sitemaker/fonts/dance-Regular.woff)format("woff"),url(/sitemaker/fonts/dance-Regular.ttf)format("truetype"),url(/sitemaker/fonts/dance-Regular.svg#dance-Regular)format("svg");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+/* =========================
+   Manrope
+========================= */
+@font-face {
+  font-family: "Manrope";
+  src: url("fonts/Manrope.woff2") format("woff2");
+}
+
+/* =========================
+   Rubik
+========================= */
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 100 900;
+  src: url("fonts/Rubik-VariableFont_wght.woff2") format("woff2");
+}
+	* {
+	  box-sizing: border-box;
+	}	
+    body {
+      margin: 0;
+	  padding: 0;
+	  height: auto;      /* body растягивается на весь экран */
+	  width: 100%;
+      font-family: "Dance Regular",Sans-Serif;
+	  text-align: center;	  
+	  /*background: linear-gradient(40deg, #311d14, #9c795d, #dec3a6);*/
+	  background: linear-gradient(40deg, #dfba93, #b59675, #9c795d);
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  background-position: center;
+	  overflow-x: hidden;
+    }
+    .hero {
+	  height: 100vh;     /* блок занимает всю высоту экрана */
+	  width: 100%;      /* блок занимает всю ширину экрана */ 
+	  display: flex;     /* используем flex для центрирования текста */
+	  flex-direction: column;
+	  position: relative;
+	  justify-content: center;  /* вертикальное центрирование */
+	  align-items: center;      /* горизонтальное центрирование */
+	  background-clip: border-box;  
+	  position: relative;      /* чтобы позиционировать дату снизу */
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  z-index: 2;
+    }
+	.hero::before {
+	  content: "";
+	  position: absolute;
+	  inset: 0;
+	  background-image:
+		url('img/123.png');
+	  opacity: 0.2;
+	  pointer-events: none;	  
+	  background-repeat: no-repeat;
+	  background-position: right 10% center;
+	  background-size: clamp(590px, 100vw, 970px);
+	  z-index: 1;
+	}
+	.hero .layer1 {
+	  position: absolute; /* обязательно! */
+	  inset: 0;
+	  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+	  opacity: 0.1;
+	  pointer-events: none;
+	  z-index: 0; /* ниже контента */
+	}
+	.hero > * {
+	  position: relative;
+	  z-index: 2;
+	}
+	.hero::after {
+	  content: "";
+	  position: absolute;
+	  inset: 0;
+	  background: rgba(0,0,0,0.1); 	   
+	  z-index: 1;
+	}
+	/* Новый блок с осветлённым фоном */
+	.light-hero {
+	  position: relative;
+	  height: clamp(50vh, 50vw, 100vh);     /* блок занимает всю высоту экрана */
+	  width: 100%;      /* блок занимает всю ширину экрана */ 
+	  display: flex;     /* используем flex для центрирования текста */
+	  flex-direction: column;
+	  align-items: flex-start;
+	  padding-left: clamp(20px, 10vw, 300px); 
+	  background-clip: border-box;  
+	  color: #311d14; /* тёмный текст для читаемости */
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  z-index: 1;
+	}
+	.light-hero::before {
+	  content: "";
+	  position: absolute;
+	  inset: 0;
+	  background-image:
+		url('img/Sloj-0.png'),
+		url('img/Sloj-1.png');
+	  background-position: 
+		10% 0,    /* первая картинка: сдвиг вправо 20%, сверху 0 */
+		100% 100%; /* вторая: справа снизу, но на 150px левее правого края */
+	  background-size: 
+		clamp(100px, 50vw, 500px) auto,  /* первая картинка */
+		clamp(100px, 50vw, 500px)  auto; /* вторая картинка */
+	  background-repeat: 
+		no-repeat, 
+		no-repeat;
+	  opacity: 0.15;
+	  pointer-events: none;	  
+	  z-index: 1;
+	}
+	.hero-image {
+	  position: absolute;
+	  right: 0;
+	  bottom: 0;
+	  z-index: 1;
+	}
+	/* Фоновое фото без осветления */
+	.hero-image img {
+	  position: absolute;
+	  display: flex;
+	  justify-content: center;
+	  /*margin-top: clamp(-180px, 50vw, -1050px);      смещаем выше блока */
+	  /*margin-left: clamp(80px, 50vw, 800px);   смещаем правее блока */
+	  width: clamp(40px, 35vw, 600px);   /* ширина картинки */
+	  transform: translate(150%, -67%);
+	  height: auto;
+	  border-radius: 8px;
+	  z-index: 2;     /* поверх фонового слоя */
+	}
+	/* Полупрозрачный светлый слой для осветления */
+	.light-hero .light-overlay {
+	  position: absolute;
+	  inset: 0;
+	  background: rgba(255, 255, 255, 0.5); /* степень осветления */
+	  z-index: 1;
+	}
+	.light-hero h2, .light-hero h3,
+	.light-hero .details {
+	  text-align: left;       /* текст внутри выравнивается влево */
+	  margin-left: 0;         /* убираем отступы слева */
+	  max-width: clamp(400px, 50vw, 500px);        /* чтобы текст не растягивался */ 
+	  position: relative;
+	  z-index: 2;
+	  align-items: center;
+	}
+	/* Текст поверх слоёв */
+	.light-hero > * {
+	  position: relative;
+	  z-index: 2;
+	}
+	/* Новый блок с белым фоном */
+	.white-hero {
+	  position: relative;
+	  height: auto;     /* блок занимает всю высоту экрана */
+	  width: 100%;      /* блок занимает всю ширину экрана */ 
+	  display: flex;     /* используем flex для центрирования текста */
+	  flex-direction: column;
+	  justify-content: center;  /* вертикальное центрирование */
+	  align-items: center;      /* горизонтальное центрирование */
+	  background-clip: border-box;  
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  z-index: 1;
+	  background: #FFFBF7;
+	  color: #311d14; /* тёмный текст для читаемости */
+	}
+	.white-hero p {
+	  font-family: 'Manrope', sans-serif;
+	  font-weight: 600;
+	  font-size: clamp(13px, 3vw, 20px);
+	  color: #8c6146;
+	  margin: clamp(10px, 3vw, 25px) 0 clamp(10px, 3vw, 30px) 0;       /* верхний отступ 50px, снизу 0 */
+	}
+	/* Новый блок с локацией */
+	.location-hero {
+	  position: relative;
+	  height: auto;     /* блок занимает всю высоту экрана */
+	  width: 100%;      /* блок занимает всю ширину экрана */ 
+	  display: flex;     /* используем flex для центрирования текста */
+	  flex-direction: column;
+	  justify-content: center;  /* вертикальное центрирование */
+	  align-items: center;      /* горизонтальное центрирование */
+	  background-clip: border-box;  
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  z-index: 2;
+	  background: #B39987;
+	  color: #fff; /* тёмный текст для читаемости */
+	}
+	.date {
+	  position: static;
+	  margin-top: 120px;
+	  font-size: clamp(20px, 8vw, 50px);
+	}	
+	.date2 {
+	  font-family: 'Dance Regular', sans-serif;
+	  font-weight: 400;
+	  color: #8c6146;
+	  font-size: clamp(20px, 5vw, 30px);
+	  margin-bottom: clamp(40px, 5vw, 100px);
+	}	
+	/* Новый блок с белым фоном */
+	.dress-hero {
+	  position: relative;
+	  height: auto;     /* блок занимает всю высоту экрана */
+	  width: 100%;      /* блок занимает всю ширину экрана */ 
+	  display: flex;     /* используем flex для центрирования текста */
+	  flex-direction: column;
+	  justify-content: center;  /* вертикальное центрирование */
+	  align-items: center;      /* горизонтальное центрирование */
+	  background-clip: border-box;  
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  z-index: 1;
+	  background: #E0D8CB;
+	  color: #311d14; /* тёмный текст для читаемости */
+	}
+	div {
+		display: block;
+		unicode-bidi: isolate;
+	}
+	thumb {
+		background-color: var(--ct-pink-color);
+		border-radius: 2px;
+		border: 0;
+	}
+	track {
+		border-radius: 2px;
+		background-color: transparent;
+	}
+	html {
+		font-size: 62.5%;
+	}
+    h1 {
+	  font-family: 'Dance Regular', sans-serif;
+	  font-weight: 400;
+	  font-size: clamp(50px, 10vw, 100px);
+	  color: #fff;
+	  text-align: center;
+	  line-height: 1;      /* минимальная высота строки */
+	  margin: 0;
+	  margin-bottom: 15px;
+	}
+	h1.connector {
+	  font-size: clamp(40px, 10vw, 90px);     /* можно чуть меньше */
+	  vertical-align: middle; /* выравниваем по центру */
+	  margin: 0 10px;     /* расстояние слева и справа */
+	}	
+    h2 {
+	  font-family: 'Dance Regular', sans-serif;
+	  font-weight: 400;
+	  font-size: clamp(20px, 5vw, 50px);
+	  color: #fff;
+	  line-height: 1;      /* минимальная высота строки */
+	  margin: 0;
+	}
+    h3 {
+	  font-family: 'Dance Regular', sans-serif;
+	  font-weight: 400;
+	  font-size: clamp(30px, 5vw, 80px);
+	  color: #8c6146;
+	  line-height: 1;      /* минимальная высота строки */
+	  margin: 0;
+	}
+    h4 {
+	  font-family: 'Dance Regular', sans-serif;
+	  font-weight: 400;
+	  font-size: clamp(40px, 3vw, 70px);
+	  color: #8c6146;
+	  line-height: 1;      /* минимальная высота строки */
+	  padding: 0;           /* на всякий случай убирает внутренние отступы */
+	  margin: clamp(50px, 5vw, 100px) 0 clamp(10px, 5vw, 20px) 0;         /* верхний отступ 50px, снизу 0 */
+	  text-align: center;      /* текст внутри блока выравнивается влево */
+	}
+    h5 {
+	  font-family: 'Dance Regular', sans-serif;
+	  font-weight: 400;
+	  font-size: clamp(40px, 3vw, 70px);
+	  margin: clamp(50px, 5vw, 100px) 0 clamp(10px, 5vw, 20px) 0;      
+	  text-align: center;      /* текст внутри блока выравнивается влево */
+	  color: #fff;
+	  line-height: 1;      /* минимальная высота строки */
+	  padding: 0;           /* на всякий случай убирает внутренние отступы */
+	}
+    h6 {
+	  font-family: 'Manrope', sans-serif;
+	  font-weight: 100;
+	  font-size: clamp(20px, 1vw, 40px);
+	  margin: 70px 0 120px 0;      
+	  text-align: center;      /* текст внутри блока выравнивается влево */
+	  color: #fff;
+	  line-height: 0;      /* минимальная высота строки */
+	  padding: 0;           /* на всякий случай убирает внутренние отступы */
+	}
+    .location img{
+	  font-family: 'Manrope', sans-serif;
+	  font-weight: 400; /* тонкий как на картинке */
+	  text-align: center;      /* текст внутри блока выравнивается влево */
+	  margin: 10px 0 0 0;      
+	  font-size: 19px;
+	  letter-spacing: 0.5px;
+	  line-height: 0.2 	;
+	  color: #fff;
+    }
+	.location p {
+	  font-family: 'Manrope', sans-serif;
+	  font-weight: 400;
+	  font-size: clamp(13px, 3vw, 20px);
+	  letter-spacing: 0.5px;
+	  line-height: 0.3;
+	  color: #fff;
+	  /*margin: clamp(5px, 5vw, 10px) 0 0 0;*/
+	}
+    .details {
+	  font-family: 'Rubik', serif;
+	  font-weight: 300; /* тонкий как на картинке */
+	  text-align: left;      /* текст внутри блока выравнивается влево */
+	  margin-left: 0;        /* убираем возможные отступы слева */
+	  font-size: clamp(11px, 2vw, 22px);
+	  letter-spacing: 0px;
+	  line-height: 1;
+	  color: #8c6146;
+    }
+	.details p {
+	  margin: clamp(1px, 5vw, 3px) 0;
+	}	
+    .details-dress {
+	  font-family: 'Rubik', serif;
+	  font-weight: 300; /* тонкий как на картинке */
+	  text-align: center;      /* текст внутри блока выравнивается влево */
+	  font-size: clamp(13px, 3vw, 20px);
+	  letter-spacing: 0px;
+	  line-height: 0.2;
+	  color: #8c6146;
+	  margin-top: clamp(4px, 3vw, 20px);
+	  margin-bottom: clamp(10px, 3vw, 50px);
+    }
+	.line {
+	  height: 1px;        /* толщина линии */
+	  background-color: #8c6146; /* цвет линии */
+	  width: clamp(150px, 15vw, 200px);        /* ширина линии */
+	  margin: clamp(3px, 3vw, 20px) clamp(10px, 3vw, 20px);     /* отступы сверху и снизу */
+	  margin-left: 0;
+	}
+	.line-w {
+	  height: 1px;        /* толщина линии */
+	  background-color: #fff; /* цвет линии */
+	  width: clamp(150px, 15vw, 200px);        /* 14% ширина линии */
+	  margin: clamp(3px, 3vw, 20px) clamp(10px, 3vw, 15px);     /* отступы сверху и снизу */
+	}
+	.line-w2 {
+	  height: 1px;        /* толщина линии */
+	  width: clamp(150px, 15vw, 200px);;        /* ширина линии */
+	  margin: clamp(3px, 3vw, 20px) clamp(10px, 3vw, 15px);     /* отступы сверху и снизу */
+	  border-top: 1px solid #fff;
+	  display: block;
+	}
+	.line-b {
+	  height: 1px;        /* толщина линии */
+	  background-color: #8c6146; /* цвет линии */
+	  width: clamp(150px, 15vw, 200px);        /* ширина линии */
+	  margin: clamp(3px, 3vw, 20px) clamp(10px, 3vw, 15px); 
+	  /*margin-top: clamp(10px, 5vw, 50px);*/
+	}
+	.line-b2 {
+	  height: 1px;        /* толщина линии */
+	  background-color: #8c6146; /* цвет линии */
+	  width: clamp(150px, 15vw, 200px);        /* ширина линии */
+	  margin: clamp(3px, 3vw, 20px) auto 0; /* сверху 50px, по бокам auto */
+	}
+    .container {
+      display: flex;
+      gap: clamp(10px, 2vw, 40px);
+    }	
+	.circle {
+	  width: clamp(30px, 8vw, 100px);
+	  height: clamp(30px, 8vw, 100px);
+	  border-radius: 50%;
+	  border: 1px solid #eee;
+	  box-shadow: 0 0 0 1px #f2e6d8;
+	  margin-bottom: clamp(30px, 5vw, 60px);
+    }
+	.c1 { background: #ad3e96; }
+    .c2 { background: #d37ec2; }
+    .c3 { background: #e1a3d4; }
+    .c4 { background: #eec9e6; }
+    .c5 { background: #ffeeff; }
+    .c6 { background: #cfe1b9; }
+    .c7 { background: #b5c99a; }
+    .c8 { background: #97a97c; }
+    .c9 { background: #87986a; }
+	.timing {	
+	  display: flex;
+	  justify-content: center;
+	  align-items: flex-start;
+	  gap: clamp(3px, 5vw, 250px);
+	  margin: 18% 0;
+	  border-radius: 8px;
+	  position: relative; 
+	  flex-wrap: wrap; 
+}
+	.timing-title {
+	  position: absolute;
+	  left: 50%;
+	  transform: translateX(-50%);
+	  top: 10%;
+
+	  font-family: 'Dance Regular', sans-serif;
+	  font-weight: 400;
+	  font-size: clamp(40px, 3vw, 70px);
+	  color: #8c6146;
+	  white-space: nowrap;
+	  margin-bottom: clamp(20px, 3vw, 50px);
+	}
+	.timing-text {
+	  
+	  justify-items: center;
+	  text-align: center;
+	  flex-direction: column; /* 🔥 ВАЖНО */
+	  flex: 0 0 auto; /* ❌ убираем растягивание */
+	  min-width: 140px; /* защита от слипания */
+	  row-gap: 2px;
+	}
+	.timing::before {
+	  content: '';
+	  position: absolute;
+
+	  left: 50%;
+	  top: 60%;
+
+	  transform: translate(-50%, -50%) rotate(45deg);
+
+	  width: clamp(8px, 1.2vw, 12px);
+	  height: clamp(8px, 1.2vw, 12px);
+
+	  background-color: #8c6146;
+	  box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+	}
+	.timing::after {
+	  content: '';
+	  position: absolute;
+
+	  left: 0;
+	  right: 0;
+
+	  top: 60%;
+	  height: 1px;
+
+	  background-color: #8c6146;
+
+	  transform: translateY(-50%);
+	}
+	.timing-wrapper {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	}
+	.timing-text p {
+	  margin: 0;
+	  color: #8c6146;
+	  font-family: 'Rubik', sans-serif;
+	  font-weight: 300;
+	  line-height: 0.85;
+	  font-size: clamp(10px, 2.2vw, 25px);
+	}
+	.time {
+	  font-size: clamp(8px, 2.5vw, 28px);
+	  font-weight: 300;
+	}
+	.text {
+	  font-size: clamp(8px, 1.2vw, 25px);
+	  font-weight: 300;
+	}
+	.timing-text img {
+	  display: block;
+	  width: clamp(40px, 20vw, 200px);
+	  height: auto;
+	  object-fit: contain;
+	  margin-bottom: clamp(10px, 4vw, 60px);
+	}
+	.calendar {	
+	  width: min(500px, 42vw);   /* максимум 500px, но уменьшается */
+	  aspect-ratio: 1 / 1;       /* сохраняет квадрат */
+	  margin: clamp(10px, 3vw, 75px) auto;
+	  font-family: 'Rubik', sans-serif;
+	  color: #8c6146;
+	}
+
+	.calendar-header {
+	  display: flex;
+	  justify-content: space-between;
+	  font-size: clamp(15px, 3vw , 30px);
+	  margin: 0 0 clamp(5px, 3vw, 30px) 0;       /* верхний отступ 50px, снизу 0 */
+	  letter-spacing: 0px;   /* уменьшили межбуквенный интервал */
+	  font-weight: 100;        /* стандартный вес, чтобы буквы не были «растянутыми» */
+	}
+
+	.calendar-weekdays {
+	  display: grid;
+	  grid-template-columns: repeat(7, clamp(7px, 6vw, 72px));
+	  font-weight: bold;
+	  margin-bottom: clamp(3px, 2vw, 15px);
+	  font-size: clamp(15px, 3vw, 30px);
+	  font-weight: 100;        /* стандартный вес, чтобы буквы не были «растянутыми» */
+	}
+
+	.calendar-weekdays .weekend {
+	  color: #e57b5c;
+	}
+
+	.calendar-days {
+	  display: grid;
+	  grid-template-columns: repeat(7, clamp(7px, 6vw, 72px));
+	  font-size: clamp(13px, 3vw, 20px);
+	  font-weight: 100;        /* стандартный вес, чтобы буквы не были «растянутыми» */
+	  margin-bottom: 10px;
+	}
+
+	.calendar-days span {
+	  display: inline-block;
+	  padding: clamp(2px, 1vw, 12px) 0;
+	}
+
+	.calendar-days .active {
+	  background-color: #bfa68b;
+	  color: #fff;
+	  border-radius: 50%;
+	}
+    .rsvp {
+      background: #fff;
+      padding: 40px;
+      margin: 20px auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+	  display: flex;
+	  flex-direction: column;
+	  align-items: flex-start;
+	  gap: 10px;
+    }
+	input {
+	  background: transparent;
+	  border: none;
+	  outline: none;
+	  font-family: 'Rubik', sans-serif;
+	  font-weight: 100; /* тонкий как на картинке */
+	  color: black; /* цвет текста */
+	  margin-left: 0; /*52*/
+      font-size: clamp(13px, 3vw, 20px);
+      padding: clamp(8px, 3vw, 12px);
+	  width: 100%;
+	  max-width: clamp(420px, 30vw, 550px);
+	  text-align: left;     /* текст и placeholder слева */
+	  border: none;                 /* убрали рамку */
+	  border-bottom: 1px solid #8c6146; /* линия снизу */
+	  border-radius: 0;             /* убрали скругление */
+	  padding-left: 0;   /* убирает отступ слева */
+	  text-indent: 0;    /* на всякий случай */
+	}
+	input::placeholder {
+	  font-family: 'Manrope', sans-serif; /* или любой другой */
+	  font-weight: 100; /* тонкий как на картинке */
+	  font-size: clamp(10px, 3vw, 18px);                   /* размер */
+	  color: black;                   /* цвет */
+	  opacity: 0.5;                       /* чтобы не был бледным */
+	}
+    button {
+      background: #c9a27c;
+      color: white;
+      border: none;
+      cursor: pointer;
+	  align-self: flex-start;
+	  margin-left: 12px;
+    }
+    button:hover {
+      background: #b38b68;
+    }
+    footer {
+      padding: 20px;
+      font-size: 14px;
+      color: #777;
+    }
+	.arrow-down {
+	  position: relative;
+	  display: inline-block;
+	  width: clamp(5px, 5vw, 10px);
+	  height: clamp(5px, 5vw, 10px);
+	  margin-left: 5px;
+	}
+
+	.arrow-down::before,
+	.arrow-down::after {
+	  content: '';
+	  position: absolute;
+	  width: 1px;             /* толщина линии */
+	  height: clamp(4px, 1vw, 10px);           /* длина линии */
+	  background-color: #8c6146;
+	  top: 5px;
+	  left: 4px;              /* центр */
+	  transform-origin: top;
+	}
+
+	.arrow-down::before {
+	  transform: rotate(135deg);   /* правая линия */
+	}
+
+	.arrow-down::after {
+	  transform: rotate(-135deg);  /* левая линия */
+	}
+	.vertical-line {
+	  width: clamp(1px, 1vw, 1.5px);        /* толщина линии */
+	  height: clamp(40px, 5vw, 68px);      /* длина линии */
+	  background-color: #fff; /* цвет линии */
+	  display: inline-block;
+	  vertical-align: middle;    /* чтобы стояла ровно с текстом */
+	  margin: 0 5px;             /* отступы слева/справа */
+	}
+	.map-button {
+	  display: inline-block;
+	  padding: clamp(10px, 3vw, 20px) clamp(30px, 3vw, 75px);
+	  border: 1px solid #fff;       /* белая обводка */
+	  background-color: transparent; /* прозрачный фон */
+	  color: #fff;                  /* белый текст */
+	  font-family: 'Rubik', sans-serif;
+	  font-weight: 300;
+	  font-size: clamp(10px, 3vw, 20px);
+	  text-decoration: none;
+	  border-radius: 30px;
+	  transition: all 0.3s ease;
+	  margin: clamp(25px, 5vw, 50px) 0 clamp(50px, 5vw, 100px) 0; 
+	}
+	.time-and-map {
+	  display: flex;
+	  align-items: center;      /* выравнивание по вертикали */
+	  justify-content: flex-start; /* начальная позиция текста */
+	  gap: clamp(20px, 5vw, 80px);                /* расстояние между временем и кнопкой */
+	  margin-top: 0;
+	}
+
+	.time-and-map h6 {
+	  margin: 0;
+	  font-family: 'Rubik', sans-serif;
+	  font-weight: 100;
+	  font-size: clamp(10px, 3vw, 30px);
+	  color: #fff;
+	  line-height: 1;
+	  gap: clamp(20px, 2vw, 60px);
+	  margin: clamp(20px, 5vw, 50px) 0 clamp(40px, 8vw, 100px) 0;
+	}
+
+	.map-button:hover {
+	  background-color: rgba(255,255,255,0.1); /* слегка подсвечиваем фон */
+	  color: #fff;                             /* текст остаётся белым */
+	}
+	.divider {
+	  position: relative;
+	  height: 2px;           /* толщина линии */
+	  background-color: #8c6146; /* цвет линии */
+	  margin: 30px 0;        /* расстояние сверху и снизу */
+	}
+
+	.divider::before {
+	  content: "";
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  width: 12px;           /* ширина ромба */
+	  height: 12px;          /* высота ромба */
+	  background-color: #8c6146; /* цвет ромба */
+	  transform: translate(-50%, -50%) rotate(45deg); /* центрируем и поворачиваем */
+	}
+	.hero-wish {
+	  width: 100%;      /* блок занимает всю ширину экрана */ 
+	  height: clamp(400px, 50vw, 550px);
+	  display: flex;     /* используем flex для центрирования текста */
+	  flex-direction: column;
+	  justify-content: center;  /* вертикальное центрирование */
+	  align-items: center;      /* горизонтальное центрирование */
+	  background-clip: border-box;  
+	  position: relative;      /* чтобы позиционировать дату снизу */
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  
+	  background: linear-gradient(40deg, #dfba93, #b59675, #9c795d);
+	  z-index: 2;
+    }
+	
+	.hero-wish::before {
+	  content: "";
+	  position: absolute;
+	  inset: 0;
+	  background-image:
+		url('https://i.postimg.cc/nL4j38c2/123.png');
+	  opacity: 0.2;
+	  pointer-events: none;	  
+	  background-repeat: no-repeat;
+	  background-position: clamp(100px, 50vw, 100px) clamp(100px, 50vw, 110px); /* сдвиг вправо на 50px, сверху 0 */	  background-size: clamp(80px, 50vw, 500px);           /* ширина 300px, высота авто */
+	  background-size: clamp(350px, 40vw, 500px);           /* ширина 300px, высота авто */
+	}
+	.hero-wish .layer2 {
+	  position: absolute; /* обязательно! */
+	  inset: 0;
+	  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+	  opacity: 0.2;
+	  pointer-events: none;
+	  z-index: 0; /* ниже контента */
+	}
+	.hero-wish::after {
+	  content: "";
+	  position: absolute;
+	  inset: 0;
+	  background: rgba(0,0,0,0.2); 	   
+	  z-index: 1;
+	}
+	.hero-wish > * {
+	  position: relative;
+	  z-index: 2;
+	}	
+	.wish p {
+	  font-family: 'Rubik', sans-serif;
+	  font-weight: 300;
+	  font-size: 20px;
+	  letter-spacing: 0.5px;
+	  line-height: 1.3;
+	  color: #fff;
+	}
+	/* навигация */
+	.slider {
+	  position: relative;
+	  overflow: hidden;
+	  width: clamp(320px, 30vw, 500px);
+	  margin: 0 auto;
+	  min-height: clamp(50px, 30vw, 200px);
+	}
+	.slider-nav {
+	  display: flex;
+	  text-align: center;
+	  padding: clamp(5px, 5vw, 20px);
+	}
+	.slide {	  
+	  flex: 0 0 clamp(320px, 30vw, 500px);     /* ← фиксированная ширина */
+	  width: clamp(320px, 30vw, 500px);
+	  box-sizing: border-box;
+	  font-family: 'Rubik', sans-serif;
+	  font-weight: 300;
+	  font-size: clamp(13px, 2vw, 20px);
+	  color: #fff;
+	  line-height: 1.4;
+	  text-align: center;
+	  padding: clamp(5px, 2vw, 20px);
+	  transform: scale(0.9);
+	  transition: 0.3s;
+	}
+	.slides-track {
+	  display: flex;	  
+	  transition: transform 0.6s ease;
+	  will-change: transform;
+	}
+	.slide.active {
+	  display: block;
+	  opacity: 1;
+	  transform: scale(1);
+	}
+	/* стрелки (если нет) */
+	.arrow {
+	  width: clamp(10px, 5vw, 30px);
+	  height: clamp(10px, 5vw, 30px);
+	  border-top: 1px solid #fff;
+	  border-right: 1px solid #fff;
+	  cursor: pointer;
+	  margin-bottom: clamp(20px, 5vw, 50px);
+	}
+	.arrow.left {
+	  transform: rotate(-135deg);
+	  margin-bottom: clamp(20px, 2vw, 100px);
+	  margin-top: clamp(10px, 2vw, 30px);
+	}
+	.arrow.right {
+	  transform: rotate(45deg);
+	  margin-bottom: clamp(20px, 2vw, 100px);
+	  margin-top: clamp(10px, 2vw, 30px);
+	}
+	/* счетчик */
+	.counter {
+	  font-size: clamp(15px, 5vw, 30px);
+	  font-family: 'Rubik', sans-serif;
+	  font-weight: 300;
+	  color: #fff;
+	  letter-spacing: 5px;
+	  margin-bottom: clamp(20px, 2vw, 100px);
+	  margin-top: clamp(10px, 2vw, 30px);
+	}
+	.wrapper {
+	  width: 100%;
+	  height: clamp(70vh, 40vw, 200vh); /* или любая нужная высота */
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  background-color: #926D55; /* цвет линии */
+	  position: relative;
+	  overflow: hidden;
+	}
+	.brush {
+	  position: absolute;
+	  width: 2000px;
+	  height: 1500px;
+	  background: url("https://i.postimg.cc/3rsHzwVH/Chat-GPT-Image-12-apr-2026-g-21-37-50.png") no-repeat center;
+	  background-size: contain;
+	  opacity: 0.1;
+	  transform: rotate(-15deg);
+	}
+	/* разные позиции */
+	.brush.one {
+	  top: -50%;
+	  left: -30%;
+	  transform: rotate(-20deg);
+	}
+	.brush.two {
+	  top: 10%;
+	  left: -30%;
+	  transform: rotate(25deg);
+	}
+	.brush.three {
+	  bottom: -20%;
+	  right: -20%;
+	  transform: rotate(-20deg);
+	}
+	.brush.four {
+	  bottom: 10%;
+	  right: 20%;
+	  transform: rotate(-5deg);
+	}
+	.brush.five {
+	  bottom: -70%;
+	  right: -30%;
+	  transform: rotate(-20deg);
+	}
+	.box {
+	  width: clamp(400px, 70vw, 1200px);
+	  height: clamp(400px, 50vw, 600px);
+	  background: #E0D8CB; /* светлый квадрат */
+	  border-radius: 24px;  /* закругление */
+	  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+	  z-index: 2;
+	}	
+    .h7 {
+	  font-family: 'Dance Regular', sans-serif;
+	  font-weight: 400;
+	  font-size: clamp(30px, 3vw, 70px);
+	  color: #8c6146;
+	  line-height: 1;      /* минимальная высота строки */
+	  padding: 0;           /* на всякий случай убирает внутренние отступы */
+	  margin: clamp(50px, 5vw, 100px) 0 clamp(10px, 5vw, 20px) 0;        /* верхний отступ 50px, снизу 0 */
+	}
+	.box p {
+	  font-family: 'Rubik', sans-serif;
+	  font-weight: 300;
+	  font-size: clamp(13px, 2vw, 20px);
+	  color: #8c6146;
+	  margin: 25px 0 50px 0;       /* верхний отступ 50px, снизу 0 */
+	}
+	.h8 {
+	  font-family: 'Rubik', sans-serif;
+	  font-weight: 500;
+	  font-size: clamp(14px, 2vw, 20px);
+	  color: #8c6146;
+	  letter-spacing: 1px;
+	  margin: clamp(20px, 2vw, 40px) 0 0 0;       /* верхний отступ 50px, снизу 0 */
+	}
+	.h9 {
+	  font-family: 'Rubik', sans-serif;
+	  font-weight: 300;
+	  font-size: clamp(14px, 2vw, 20px);
+	  color: #8c6146;
+	  margin: clamp(10px, 2vw, 20px) 0 0 0;       /* верхний отступ 50px, снизу 0 */
+	  letter-spacing: 1px;
+	  line-height: 0.2;
+	}
+    .h10 p{
+	  font-family: 'Dance Regular', sans-serif;
+	  font-weight: 400;
+	  font-size: clamp(10px, 5vw, 80px);
+	  color: #fff;
+	  line-height: 1;      /* минимальная высота строки */
+	  margin: 0;
+	  margin-top: clamp(30px, 5vw, 50px);
+	}
+    .h11 {
+	  font-family: 'Manrope', sans-serif;
+	  font-weight: 100;
+	  font-size: clamp(10px, 3vw, 18px);
+	  line-height: 1;
+	  line-height: 0.2;
+	  color: #fff;
+	  margin-bottom: 60px;
+	}
+	 .hero2 {
+	  height: clamp(700px, 50vw, 1000px);     /* блок занимает всю высоту экрана */
+	  width: 100%;      /* блок занимает всю ширину экрана */ 
+	  display: flex;     /* используем flex для центрирования текста */
+	  flex-direction: column;
+	  justify-content: center;  /* вертикальное центрирование */
+	  align-items: center;      /* горизонтальное центрирование */
+	  background-clip: border-box;  
+	  position: relative;      /* чтобы позиционировать дату снизу */
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  background: linear-gradient(40deg, #9c795d, #9c795d, #dec3a6);
+	  background-position: center;
+	  z-index: 2;
+    }
+	.hero2::before {
+	  content: "";
+	  position: absolute;
+	  inset: 0;
+	  background-image:
+		url('https://i.postimg.cc/nL4j38c2/123.png');
+	  opacity: 0.2;
+	  pointer-events: none;	  
+	  background-repeat: no-repeat;
+	  background-position: 90%; /* сдвиг вправо на 50px, сверху 0 */
+	  background-size: 1000px;           /* ширина 300px, высота авто */
+	  z-index: 1;
+	}
+	.hero2 .layer3 {
+	  position: absolute; /* обязательно! */
+	  inset: 0;
+	  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+	  opacity: 0.15;
+	  pointer-events: none;
+	  z-index: 0; /* ниже контента */
+	}
+	.hero > * {
+	  position: relative;
+	  z-index: 2;
+	}
+	.hero2::after {
+	  content: "";
+	  position: absolute;
+	  inset: 0;
+	  background: rgba(0,0,0,0.02); 	   
+	  z-index: 1;
+	}    
+	.details-form {
+	  font-family: 'Manrope', serif;
+	  font-weight: 600; /* тонкий как на картинке */
+	  text-align: left;      /* текст внутри блока выравнивается влево */
+	  font-size: clamp(11px, 3vw, 18px);
+	  letter-spacing: 0px;
+	  line-height: 1.4; /* ← нормальное значение */
+	  color: #8c6146;
+	  margin-top: clamp(20px, 5vw, 50px);
+	  margin-bottom: clamp(4px, 2vw, 13px);
+	  width: 100%;
+	  margin-left: 0;
+    }
+	/* Новый блок с белым фоном */
+	.form-hero {
+	  position: relative;
+	  height: auto;     /* блок занимает всю высоту экрана */
+	  width: 100%;      /* блок занимает всю ширину экрана */ 
+	  display: flex;     /* используем flex для центрирования текста */
+	  flex-direction: column;
+	  justify-content: center;  /* вертикальное центрирование */
+	  /* align-items: center; */     /* горизонтальное центрирование */
+	  /* padding-left: 0;*/
+	  text-align: left;
+	  background-clip: border-box;  
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  background: #FFFBF7;
+	  color: #311d14; /* тёмный текст для читаемости */
+	  z-index: 2;
+	  max-width: 600px;
+	  margin: 0 auto;
+	  padding: 0 clamp(13px, 3vw, 20px);
+	  align-items: flex-start;
+
+	}
+	.form-hero p {
+	  font-family: 'Manrope', sans-serif;
+	  font-weight: 600;
+	  font-size: clamp(13px, 3vw, 20px);
+	  color: #8c6146;
+	  margin: clamp(10px, 5vw, 25px) 0 clamp(15px, 5vw, 30px) 0;       /* верхний отступ 50px, снизу 0 */
+	}
+	.radio-group {
+	  display: flex;
+	  flex-direction: column;
+	  gap: clamp(5px, 5vw, 15px);
+	  font-family: 'Manrope', sans-serif;
+	  font-weight: 100;
+	  font-size: clamp(11px, 3vw, 18px);
+	  color: #8c6146;
+	  width: 100%;
+	  align-items: flex-start; /* 🔥 ключевая строка */
+	}
+
+	.radio-group label {
+	  display: flex;
+	  align-items: center;
+	  gap: clamp(10px, 5vw, 15px); /* расстояние между кружком и текстом */
+	  cursor: pointer;
+	}
+
+	.radio-group input[type="radio"] {
+	  accent-color: #8c6146;
+	  transform: scale(1.3);
+	  margin: 0; 
+	  width: clamp(5px, 5vw, 20px);        /* фикс ширины */
+	  min-width: clamp(10px, 5vw, 20px);    /* 🔥 важно */
+	}
+	.send-button {
+	  display: block;
+	  margin: clamp(5px, 3vw, 20px) clamp(210px, 20vw, 320px) 0; /* 👈 центрирует */
+	  padding: clamp(10px, 5vw, 20px) clamp(50px, 5vw, 80px);
+	  background: transparent;        /* прозрачная */
+	  border: 1px solid #8c6146;      /* обводка */
+	  color: #8c6146;                 /* цвет текста */
+	  text-decoration: none;
+	  border-radius: clamp(30px, 3vw, 50px);
+	  font-family: 'Manrope', sans-serif;
+	  font-weight: 300;
+	  cursor: pointer;
+	  margin-top: clamp(30px, 100vw, 60px);
+	  margin-bottom: clamp(50px, 10vw, 100px);
+	  font-size: clamp(10px, 3vw, 17px);
+	}
+
+	.send-button:hover {
+	  background: #8c6146;   /* заливка при наведении */
+	  color: #fff;           /* текст белый */ 
+	}
+	.modal {
+	  display: none;
+	  position: fixed;
+	  z-index: 1000;
+	  left: 0;
+	  top: 0;
+	  width: 100%;
+	  height: 100%;
+
+	  background: rgba(0, 0, 0, 0.4);
+	  backdrop-filter: blur(5px);
+
+	  justify-content: center;
+	  align-items: center;
+	}
+
+	.modal-content {
+	  background: white;
+	  padding: 40px;
+	  border-radius: 20px;
+	  text-align: center;
+	  width: 320px;
+
+	  animation: fadeIn 0.4s ease;
+	}
+
+	.modal-title {
+	  font-size: 26px;
+	  color: #8c6146;
+	  margin-bottom: 15px;
+	  font-family: 'Rubik', sans-serif;
+	}
+
+	.modal-text {
+	  font-size: 18px;
+	  color: #8c6146;
+	  font-family: 'Rubik', sans-serif;
+	}
+
+	.close {
+	  position: absolute;
+	  top: 20px;
+	  right: 30px;
+	  font-size: 24px;
+	  cursor: pointer;
+	  color: #8c6146;
+	}
+
+	@keyframes fadeIn {
+	  from {
+		opacity: 0;
+		transform: translateY(20px);
+	  }
+	  to {
+		opacity: 1;
+		transform: translateY(0);
+	  }
+	}
+	@media (max-width: 600px) {
+	  .timing-text img {
+		width: 50px;
+		margin-bottom: 8px;
+		gap: clamp(2px, 1vw, 250px);
+	  }
+	  .timing {
+		gap: 2px;               /* минимальное расстояние между карточками */
+		justify-content: center;
+		align-items: flex-start;
+	  }
+
+	  .timing-text {
+		flex: 1 1 0;
+		min-width: 80px;
+		max-width: 140px;
+	  }
+
+	  .timing-text img {
+		width: 60px;
+		height: auto;
+		margin-top: 30px;
+		margin-bottom: 25px;
+	  }
+
+	  .timing-text p {
+		margin: 0;
+		line-height: 1;
+		font-size: 11px;
+	  }
+
+	  .time {
+		font-size: 13px;
+	  }
+	}
