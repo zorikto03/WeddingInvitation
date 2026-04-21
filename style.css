@@ -1170,7 +1170,7 @@
 	  .hero-image img {
 		position: static;             /* ❗ убираем absolute */
 		transform: none;              /* ❗ убираем сдвиги */
-		width: 40vw;                   /* адаптивный размер */
+		width: 30vw;                   /* адаптивный размер */
 		max-width: 300px;
 		margin: 0 auto;
 		display: block;
