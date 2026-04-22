@@ -1091,8 +1091,8 @@
 
 	.close {
 	  position: absolute;
-	  top: clamp(10px, 2vw, 20px);
-	  right: clamp(15px, 2vw, 30px);
+	  top: 20px;
+	  right: 30px;
 	  font-size: 24px;
 	  cursor: pointer;
 	  color: #8c6146;
