@@ -1122,7 +1122,7 @@
 
 	  .timing-text {
 		flex: 1 1 0;
-		min-width: 90px;
+		min-width: 60px;
 		max-width: 140px;
 	  }
 
