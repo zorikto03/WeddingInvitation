@@ -898,7 +898,7 @@
     .h10 p{
 	  font-family: 'Dance Regular', sans-serif;
 	  font-weight: 400;
-	  font-size: clamp(30px, 10vw, 80px);
+	  font-size: clamp(50px, 10vw, 80px);
 	  color: #fff;
 	  line-height: 1;      /* минимальная высота строки */
 	  margin: 0;
