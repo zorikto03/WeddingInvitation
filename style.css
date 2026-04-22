@@ -413,7 +413,7 @@
 	  display: flex;
 	  justify-content: center;
 	  align-items: flex-start;
-	  gap: clamp(3px, 5vw, 250px);
+	  gap: clamp(6px, 5vw, 250px);
 	  margin: 18% 0;
 	  border-radius: 8px;
 	  position: relative; 
@@ -1130,7 +1130,7 @@
 		height: auto;
 		margin-top: 30px;
 		margin-bottom: 25px;
-		margin-left: 5px;
+		margin-left: 8px;
 	  }
 
 	  .timing-text p {
