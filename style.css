@@ -1068,7 +1068,7 @@
 	}
 
 	.modal-content {
-  	  position: absolute;
+  	  position: relative;
 	  background: white;
 	  padding: 40px;
 	  border-radius: 20px;
