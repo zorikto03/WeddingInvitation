@@ -1097,9 +1097,6 @@
 	  cursor: pointer;
 	  color: #8c6146;
 	}
-	.close:hover {
-	  opacity: 0.6;
-	}
 
 	@keyframes fadeIn {
 	  from {
