@@ -1051,9 +1051,7 @@
 	  color: #fff;           /* текст белый */ 
 	}
 	.modal {
-	  display: flex;
-	  justify-content: center; /* по горизонтали */
-	  align-items: center;     /* по вертикали */
+	  display: none;
 	  position: fixed;
 	  z-index: 1000;
 	  left: 0;
@@ -1069,12 +1067,15 @@
 	}
 
 	.modal-content {
-	  position: relative;
+	  position: absolute;
 	  background: white;
 	  padding: 40px;
 	  border-radius: 20px;
 	  text-align: center;
 	  width: 320px;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
 
 	  animation: fadeIn 0.4s ease;
 	}
