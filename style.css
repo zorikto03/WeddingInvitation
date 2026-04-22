@@ -289,14 +289,14 @@
 	  color: #8c6146;
 	  line-height: 1;      /* минимальная высота строки */
 	  padding: 0;           /* на всякий случай убирает внутренние отступы */
-	  margin: clamp(50px, 5vw, 100px) 0 clamp(10px, 5vw, 20px) 0;         /* верхний отступ 50px, снизу 0 */
+	  margin: clamp(30px, 5vw, 100px) 0 clamp(10px, 5vw, 20px) 0;         /* верхний отступ 50px, снизу 0 */
 	  text-align: center;      /* текст внутри блока выравнивается влево */
 	}
     h5 {
 	  font-family: 'Dance Regular', sans-serif;
 	  font-weight: 400;
 	  font-size: clamp(40px, 3vw, 70px);
-	  margin: clamp(50px, 5vw, 100px) 0 clamp(10px, 5vw, 20px) 0;      
+	  margin: clamp(30px, 5vw, 100px) 0 clamp(10px, 5vw, 20px) 0;      
 	  text-align: center;      /* текст внутри блока выравнивается влево */
 	  color: #fff;
 	  line-height: 1;      /* минимальная высота строки */
@@ -1108,9 +1108,9 @@
 		transform: translateY(0);
 	  }
 	}
-	@media (max-width: 600px) {
+	@media (max-width: 400px) {
 	  .timing-text img {
-		width: 50px;
+		width: 80px;
 		margin-bottom: 8px;
 		gap: clamp(2px, 1vw, 250px);
 	  }
