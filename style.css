@@ -1169,7 +1169,7 @@
 		font-size: 13px;
 	  }
 	}
-		@media (max-width: 700px) {
+		@media (max-width: 400px) {
 	  .light-hero {
 		align-items: center;          /* всё по центру */
 		text-align: center;
@@ -1201,45 +1201,3 @@
 		display: block;
 	  }
 	}
-	/* ===== TABLET ===== */
-@media (max-width: 1024px) {
-  .hero {
-    padding: 40px 20px;
-  }
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 768px) {
-  body {
-    text-align: center;
-  }
-
-  .hero {
-    min-height: auto;
-    padding: 60px 20px;
-  }
-
-  h1 {
-    line-height: 1.2;
-  }
-
-  .some-block { /* замени на реальные классы */
-    flex-direction: column;
-    gap: 20px;
-  }
-}
-
-/* ===== SMALL MOBILE ===== */
-@media (max-width: 480px) {
-  h1 {
-    font-size: 28px;
-  }
-
-  p {
-    font-size: 14px;
-  }
-
-  .hero {
-    padding: 40px 15px;
-  }
-}
