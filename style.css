@@ -1178,7 +1178,8 @@
 	  .hero-image img {
 		position: static;
 		transform: none;
-		width: min(90vw, 320px);
+		width: min(80vw, 260px);
+		max-width: 260px;
 		margin: 0 auto;
 		display: block;
 	  }
@@ -1211,7 +1212,8 @@
 	  .hero-image img {
 		position: static;             /* ❗ убираем absolute */
 		transform: none;              /* ❗ убираем сдвиги */
-		width: min(90vw, 320px);      /* адаптивный размер */
+		width: min(85vw, 260px);      /* адаптивный размер */
+		max-width: 260px;
 		margin: 0 auto;
 		display: block;
 	  }
