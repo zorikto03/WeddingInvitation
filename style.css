@@ -1149,6 +1149,33 @@
 	  .time {
 		font-size: 13px;
 	  }
+
+	  .light-hero {
+		align-items: center;
+		text-align: center;
+		padding-left: 20px;
+		padding-right: 20px;
+	  }
+
+	  .light-hero h3,
+	  .light-hero .details,
+	  .line {
+		text-align: center;
+		margin-left: 0;
+	  }
+
+	  .hero-image {
+		position: static;
+		margin-top: 20px;
+	  }
+
+	  .hero-image img {
+		position: static;
+		transform: none;
+		width: min(90vw, 320px);
+		margin: 0 auto;
+		display: block;
+	  }
 	}
 		@media (max-width: 400px) {
 	  .light-hero {
@@ -1177,7 +1204,7 @@
 	  .hero-image img {
 		position: static;             /* ❗ убираем absolute */
 		transform: none;              /* ❗ убираем сдвиги */
-		width: 25vw;                   /* адаптивный размер */
+		width: min(90vw, 320px);      /* адаптивный размер */
 		margin: 0 auto;
 		display: block;
 	  }
