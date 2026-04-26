@@ -53,7 +53,6 @@
 	  min-height: 100vh;
 	  padding: 20px;
 	  display: flex;     /* используем flex для центрирования текста */
-	  flex-wrap: wrap;
 	  flex-direction: column;
 	  position: relative;
 	  justify-content: center;  /* вертикальное центрирование */
@@ -102,7 +101,6 @@
 	  height: clamp(50vh, 50vw, 100vh);     /* блок занимает всю высоту экрана */
 	  width: 100%;      /* блок занимает всю ширину экрана */ 
 	  display: flex;     /* используем flex для центрирования текста */
-	  flex-wrap: wrap;
 	  flex-direction: column;
 	  align-items: flex-start;
 	  padding-left: clamp(20px, 10vw, 300px); 
@@ -142,7 +140,6 @@
 	.hero-image img {
 	  position: absolute;
 	  display: flex;
-	  flex-wrap: wrap;
 	  justify-content: center;
 	  /*margin-top: clamp(-180px, 50vw, -1050px);      смещаем выше блока */
 	  /*margin-left: clamp(80px, 50vw, 800px);   смещаем правее блока */
@@ -179,7 +176,6 @@
 	  height: auto;     /* блок занимает всю высоту экрана */
 	  width: 100%;      /* блок занимает всю ширину экрана */ 
 	  display: flex;     /* используем flex для центрирования текста */
-	  flex-wrap: wrap;
 	  flex-direction: column;
 	  justify-content: center;  /* вертикальное центрирование */
 	  align-items: center;      /* горизонтальное центрирование */
@@ -203,7 +199,6 @@
 	  height: auto;     /* блок занимает всю высоту экрана */
 	  width: 100%;      /* блок занимает всю ширину экрана */ 
 	  display: flex;     /* используем flex для центрирования текста */
-	  flex-wrap: wrap;
 	  flex-direction: column;
 	  justify-content: center;  /* вертикальное центрирование */
 	  align-items: center;      /* горизонтальное центрирование */
@@ -232,7 +227,6 @@
 	  height: auto;     /* блок занимает всю высоту экрана */
 	  width: 100%;      /* блок занимает всю ширину экрана */ 
 	  display: flex;     /* используем flex для центрирования текста */
-	  flex-wrap: wrap;
 	  flex-direction: column;
 	  justify-content: center;  /* вертикальное центрирование */
 	  align-items: center;      /* горизонтальное центрирование */
@@ -398,11 +392,10 @@
 	}
     .container {
       display: flex;
-	  flex-wrap: wrap;
       gap: clamp(10px, 2vw, 40px);
 	  max-width: 1200px;
 	  margin: 0 auto;
-	  padding: 0 16px;
+	 padding: 0 16px;
     }	
 	.circle {
 	  width: clamp(30px, 8vw, 100px);
@@ -484,7 +477,6 @@
 	}
 	.timing-wrapper {
 	  display: flex;
-	  flex-wrap: wrap;
 	  flex-direction: column;
 	  align-items: center;
 	}
@@ -521,7 +513,6 @@
 
 	.calendar-header {
 	  display: flex;
-	  flex-wrap: wrap;
 	  justify-content: space-between;
 	  font-size: clamp(11px, 2vw , 30px);
 	  margin: 0 0 clamp(5px, 3vw, 30px) 0;       /* верхний отступ 50px, снизу 0 */
@@ -567,7 +558,6 @@
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 	  display: flex;
-	  flex-wrap: wrap;
 	  flex-direction: column;
 	  align-items: flex-start;
 	  gap: 10px;
@@ -665,7 +655,6 @@
 	}
 	.time-and-map {
 	  display: flex;
-	  flex-wrap: wrap;
 	  align-items: center;      /* выравнивание по вертикали */
 	  justify-content: flex-start; /* начальная позиция текста */
 	  gap: clamp(20px, 5vw, 80px);                /* расстояние между временем и кнопкой */
@@ -708,7 +697,6 @@
 	  width: 100%;      /* блок занимает всю ширину экрана */ 
 	  height: clamp(400px, 50vw, 550px);
 	  display: flex;     /* используем flex для центрирования текста */
-	  flex-wrap: wrap;
 	  flex-direction: column;
 	  justify-content: center;  /* вертикальное центрирование */
 	  align-items: center;      /* горизонтальное центрирование */
@@ -770,7 +758,6 @@
 	}
 	.slider-nav {
 	  display: flex;
-	  flex-wrap: wrap;
 	  text-align: center;
 	  padding: clamp(5px, 5vw, 20px);
 	}
@@ -790,7 +777,6 @@
 	}
 	.slides-track {
 	  display: flex;	  
-	  flex-wrap: wrap;
 	  transition: transform 0.6s ease;
 	  will-change: transform;
 	}
@@ -832,7 +818,6 @@
 	  width: 100%;
 	  height: clamp(70vh, 40vw, 200vh); /* или любая нужная высота */
 	  display: flex;
-	  flex-wrap: wrap;
 	  justify-content: center;
 	  align-items: center;
 	  background-color: #926D55; /* цвет линии */
@@ -937,7 +922,6 @@
 	  height: clamp(700px, 50vw, 1000px);     /* блок занимает всю высоту экрана */
 	  width: 100%;      /* блок занимает всю ширину экрана */ 
 	  display: flex;     /* используем flex для центрирования текста */
-	  flex-wrap: wrap;
 	  flex-direction: column;
 	  justify-content: center;  /* вертикальное центрирование */
 	  align-items: center;      /* горизонтальное центрирование */
@@ -1000,7 +984,6 @@
 	  height: auto;     /* блок занимает всю высоту экрана */
 	  width: 100%;      /* блок занимает всю ширину экрана */ 
 	  display: flex;     /* используем flex для центрирования текста */
-	  flex-wrap: wrap;
 	  flex-direction: column;
 	  justify-content: center;  /* вертикальное центрирование */
 	  /* align-items: center; */     /* горизонтальное центрирование */
@@ -1027,7 +1010,6 @@
 	}
 	.radio-group {
 	  display: flex;
-	  flex-wrap: wrap;
 	  flex-direction: column;
 	  gap: clamp(5px, 5vw, 15px);
 	  font-family: 'Manrope', sans-serif;
@@ -1040,7 +1022,6 @@
 
 	.radio-group label {
 	  display: flex;
-	  flex-wrap: wrap;
 	  align-items: center;
 	  gap: clamp(10px, 5vw, 15px); /* расстояние между кружком и текстом */
 	  cursor: pointer;
@@ -1201,3 +1182,144 @@
 		display: block;
 	  }
 	}
+@media (max-width: 900px) {
+  .hero,
+  .light-hero,
+  .white-hero,
+  .location-hero,
+  .dress-hero,
+  .hero-wish,
+  .wrapper,
+  .form-hero {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .light-hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .details,
+  .details-dress,
+  .details-form,
+  .location p,
+  .hero h1,
+  .hero h2,
+  .light-hero h3,
+  .white-hero h4,
+  .h7,
+  .h8,
+  .h9 {
+    max-width: 100%;
+  }
+
+  .time-and-map {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(12px, 4vw, 40px);
+  }
+
+  .time-and-map h6 {
+    text-align: center;
+    margin: clamp(20px, 5vw, 40px) 0 0 0;
+  }
+
+  .map-button {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto clamp(30px, 5vw, 50px) auto;
+    display: inline-flex;
+    justify-content: center;
+  }
+
+  .calendar {
+    width: min(100%, 420px);
+    aspect-ratio: 1 / 1;
+  }
+
+  .slider {
+    width: min(100%, 420px);
+    margin: 0 auto;
+  }
+
+  .slider-nav {
+    justify-content: center;
+  }
+
+  .box {
+    width: min(100%, 90vw);
+    padding: clamp(20px, 4vw, 40px);
+  }
+
+  .wrapper {
+    height: auto;
+    padding: clamp(20px, 4vw, 40px) 0;
+  }
+
+  .brush {
+    opacity: 0.08;
+  }
+
+  .send-button {
+    width: 100%;
+    max-width: 100%;
+    margin: clamp(16px, 4vw, 30px) auto;
+  }
+
+  .modal-content {
+    width: min(100%, 90vw);
+    padding: clamp(20px, 4vw, 30px);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: auto;
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+  .hero h1,
+  .hero h2,
+  .light-hero h3,
+  .h4,
+  .h5,
+  .h7 {
+    font-size: clamp(28px, 10vw, 52px);
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 10vw, 58px);
+  }
+
+  .hero h2,
+  .time,
+  .text,
+  .details,
+  .details-dress,
+  .location p,
+  .map-button,
+  input,
+  .send-button {
+    font-size: clamp(12px, 4vw, 18px);
+  }
+
+  .calendar-weekdays,
+  .calendar-days {
+    grid-template-columns: repeat(7, minmax(24px, 1fr));
+  }
+
+  .time-and-map {
+    gap: 12px;
+  }
+
+  .box {
+    border-radius: 18px;
+  }
+
+  .brush {
+    display: none;
+  }
+}
