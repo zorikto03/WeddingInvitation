@@ -47,6 +47,11 @@
 	  background-position: center;
 	  overflow-x: hidden;
     }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
     .hero {
 	  /* height: 100vh;     /* блок занимает всю высоту экрана */
 	  width: 100%;      /* блок занимает всю ширину экрана */ 
@@ -1225,6 +1230,31 @@
   .light-hero {
     padding-left: 20px;
     padding-right: 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .light-hero h3,
+  .light-hero .details,
+  .line {
+    max-width: 100%;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .hero-image {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: min(100%, 420px);
+    margin: 20px auto 0;
+  }
+
+  .hero-image img {
+    position: relative;
+    transform: none;
+    width: 100%;
+    max-width: 420px;
   }
 
   .details,
