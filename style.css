@@ -103,7 +103,7 @@
 	/* Новый блок с осветлённым фоном */
 	.light-hero {
 	  position: relative;
-	  height: clamp(50vh, 50vw, 100vh);     /* блок занимает всю высоту экрана */
+	  height: clamp(70vh, 70vw, 120vh);     /* блок занимает всю высоту экрана */
 	  width: 100%;      /* блок занимает всю ширину экрана */ 
 	  display: flex;     /* используем flex для центрирования текста */
 	  flex-direction: column;
@@ -148,7 +148,7 @@
 	  justify-content: center;
 	  /*margin-top: clamp(-180px, 50vw, -1050px);      смещаем выше блока */
 	  /*margin-left: clamp(80px, 50vw, 800px);   смещаем правее блока */
-	  width: clamp(30px, 30vw, 600px);   /* ширина картинки */
+	  width: clamp(20px, 20vw, 400px);   /* ширина картинки */
 	  transform: translate(150%, -67%);
 	  height: auto;
 	  border-radius: 8px;
@@ -1178,8 +1178,7 @@
 	  .hero-image img {
 		position: static;
 		transform: none;
-		width: min(80vw, 260px);
-		max-width: 260px;
+		width: min(90vw, 320px);
 		margin: 0 auto;
 		display: block;
 	  }
@@ -1212,8 +1211,7 @@
 	  .hero-image img {
 		position: static;             /* ❗ убираем absolute */
 		transform: none;              /* ❗ убираем сдвиги */
-		width: min(85vw, 260px);      /* адаптивный размер */
-		max-width: 260px;
+		width: min(90vw, 320px);      /* адаптивный размер */
 		margin: 0 auto;
 		display: block;
 	  }
