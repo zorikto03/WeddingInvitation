@@ -1432,7 +1432,7 @@
   }
   .box {
     width: 800px;
-	height: 500px;
+	height: clamp(500px, 30vw, 600px);;
   }
   .details-dress,
   .location p, .white-hero p  {
