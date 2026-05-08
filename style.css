@@ -55,7 +55,7 @@
     .hero {
 	  /* height: 100vh;     /* блок занимает всю высоту экрана */
 	  width: 100%;      /* блок занимает всю ширину экрана */ 
-	  min-height: 100vh;
+	  min-height: 80vh;
 	  padding: 20px;
 	  display: flex;     /* используем flex для центрирования текста */
 	  flex-direction: column;
@@ -78,7 +78,7 @@
 	  pointer-events: none;	  
 	  background-repeat: no-repeat;
 	  background-position: right 10% center;
-	  background-size: clamp(470px, 100vw, 970px);
+	  background-size: clamp(470px, 130vw, 970px);
 	  z-index: 1;
 	}
 	.hero .layer1 {
@@ -103,12 +103,12 @@
 	/* Новый блок с осветлённым фоном */
 	.light-hero {
 	  position: relative;
-	  height: clamp(70vh, 70vw, 120vh);     /* блок занимает всю высоту экрана */
+	 /* height: clamp(70vh, 70vw, 120vh);     /* блок занимает всю высоту экрана */
 	  width: 100%;      /* блок занимает всю ширину экрана */ 
 	  display: flex;     /* используем flex для центрирования текста */
 	  flex-direction: column;
-	  align-items: flex-start;
-	  padding-left: clamp(20px, 10vw, 300px); 
+	 /* align-items: flex-start;*/
+	 /*padding-left: clamp(20px, 10vw, 300px); */
 	  background-clip: border-box;  
 	  color: #311d14; /* тёмный текст для читаемости */
 	  background-size: cover;
@@ -143,13 +143,14 @@
 	}
 	/* Фоновое фото без осветления */
 	.hero-image img {
-	  position: absolute;
+	  /*position: absolute;*/
 	  display: flex;
 	  justify-content: center;
 	  /*margin-top: clamp(-180px, 50vw, -1050px);      смещаем выше блока */
 	  /*margin-left: clamp(80px, 50vw, 800px);   смещаем правее блока */
-	  width: clamp(20px, 10vw, 400px);   /* ширина картинки */
-	  transform: translate(150%, -67%);
+	  width: clamp(200px, 40vw, 400px);   /* ширина картинки */
+	  /*transform: translate(150%, -67%);*/
+	  margin-top: 30px;
 	  height: auto;
 	  border-radius: 8px;
 	  z-index: 2;     /* поверх фонового слоя */
@@ -165,7 +166,7 @@
 	.light-hero .details {
 	  text-align: left;       /* текст внутри выравнивается влево */
 	  margin-left: 0;         /* убираем отступы слева */
-	  max-width: clamp(400px, 50vw, 500px);        /* чтобы текст не растягивался */ 
+	  /*max-width: clamp(500px, 50vw, 500px);         чтобы текст не растягивался */ 
 	  position: relative;
 	  z-index: 2;
 	  align-items: center;
@@ -284,15 +285,15 @@
     h3 {
 	  font-family: 'Dance Regular', sans-serif;
 	  font-weight: 400;
-	  font-size: clamp(30px, 5vw, 80px);
+	  font-size: clamp(50px, 7vw, 80px);
 	  color: #8c6146;
 	  line-height: 1;      /* минимальная высота строки */
-	  margin: 0;
+	   margin: clamp(30px, 5vw, 100px) 0 clamp(6px, 5vw, 10px) 0;   
 	}
     h4 {
 	  font-family: 'Dance Regular', sans-serif;
 	  font-weight: 400;
-	  font-size: clamp(40px, 3vw, 70px);
+	  font-size: clamp(40px, 7vw, 70px);
 	  color: #8c6146;
 	  line-height: 1;      /* минимальная высота строки */
 	  padding: 0;           /* на всякий случай убирает внутренние отступы */
@@ -302,7 +303,7 @@
     h5 {
 	  font-family: 'Dance Regular', sans-serif;
 	  font-weight: 400;
-	  font-size: clamp(40px, 3vw, 70px);
+	  font-size: clamp(40px, 7vw, 70px);
 	  margin: clamp(30px, 5vw, 100px) 0 clamp(10px, 5vw, 20px) 0;      
 	  text-align: center;      /* текст внутри блока выравнивается влево */
 	  color: #fff;
@@ -341,9 +342,9 @@
     .details {
 	  font-family: 'Rubik', serif;
 	  font-weight: 300; /* тонкий как на картинке */
-	  text-align: left;      /* текст внутри блока выравнивается влево */
+	  text-align: center;      /* текст внутри блока выравнивается влево */
 	  margin-left: 0;        /* убираем возможные отступы слева */
-	  font-size: clamp(13px, 3vw, 22px);
+	  font-size: clamp(28px, 4vw, 30px);
 	  letter-spacing: 0px;
 	  line-height: 1;
 	  color: #8c6146;
@@ -437,7 +438,7 @@
 
 	  font-family: 'Dance Regular', sans-serif;
 	  font-weight: 400;
-	  font-size: clamp(40px, 3vw, 70px);
+	  font-size: clamp(40px, 7vw, 70px);
 	  color: #8c6146;
 	  white-space: nowrap;
 	  margin-bottom: clamp(20px, 3vw, 50px);
@@ -527,7 +528,7 @@
 
 	.calendar-weekdays {
 	  display: grid;
-	  grid-template-columns: repeat(7, clamp(7px, 6vw, 72px));
+	  grid-template-columns: repeat(7, clamp(50px, 6vw, 72px));
 	  font-weight: bold;
 	  margin-bottom: clamp(3px, 2vw, 15px);
 	  font-size: clamp(11px, 2vw, 30px);
@@ -540,7 +541,7 @@
 
 	.calendar-days {
 	  display: grid;
-	  grid-template-columns: repeat(7, clamp(7px, 6vw, 72px));
+	  grid-template-columns: repeat(7, clamp(50px, 6vw, 72px));
 	  font-size: clamp(10px, 2vw, 20px);
 	  font-weight: 100;        /* стандартный вес, чтобы буквы не были «растянутыми» */
 	  margin-bottom: 10px;
@@ -767,7 +768,7 @@
 	  padding: clamp(5px, 5vw, 20px);
 	}
 	.slide {	  
-	  flex: 0 0 clamp(320px, 30vw, 500px);     /* ← фиксированная ширина */
+	  flex: 0 0 clamp(390px, 30vw, 500px);     /* ← фиксированная ширина */
 	  width: clamp(320px, 30vw, 500px);
 	  box-sizing: border-box;
 	  font-family: 'Rubik', sans-serif;
@@ -875,7 +876,7 @@
     .h7 {
 	  font-family: 'Dance Regular', sans-serif;
 	  font-weight: 400;
-	  font-size: clamp(30px, 3vw, 70px);
+	  font-size: clamp(40px, 5vw, 70px);
 	  color: #8c6146;
 	  line-height: 1;      /* минимальная высота строки */
 	  padding: 0;           /* на всякий случай убирает внутренние отступы */
@@ -884,14 +885,14 @@
 	.box p {
 	  font-family: 'Rubik', sans-serif;
 	  font-weight: 300;
-	  font-size: clamp(13px, 3vw, 20px);
+	  font-size: clamp(15px, 3vw, 25px);
 	  color: #8c6146;
-	  margin: 25px 0 50px 0;       /* верхний отступ 50px, снизу 0 */
+	  margin: 25px 0 clamp(20px, 4vw, 50px) 0;       /* верхний отступ 50px, снизу 0 */
 	}
 	.h8 {
 	  font-family: 'Rubik', sans-serif;
 	  font-weight: 500;
-	  font-size: clamp(14px, 2vw, 20px);
+	  font-size: clamp(15px, 3vw, 25px);
 	  color: #8c6146;
 	  letter-spacing: 1px;
 	  margin: clamp(20px, 2vw, 40px) 0 0 0;       /* верхний отступ 50px, снизу 0 */
@@ -899,7 +900,7 @@
 	.h9 {
 	  font-family: 'Rubik', sans-serif;
 	  font-weight: 300;
-	  font-size: clamp(14px, 2vw, 20px);
+	  font-size: clamp(15px, 3vw, 25px);
 	  color: #8c6146;
 	  margin: clamp(10px, 2vw, 20px) 0 0 0;       /* верхний отступ 50px, снизу 0 */
 	  letter-spacing: 1px;
@@ -1133,7 +1134,7 @@
 
 	  .timing-text {
 		flex: 1 1 0;
-		min-width: 80px;
+		min-width: 60px;
 		max-width: 140px;
 	  }
 
@@ -1178,9 +1179,13 @@
 	  .hero-image img {
 		position: static;
 		transform: none;
-		width: min(90vw, 320px);
+		width: min(90vw, 170px);
 		margin: 0 auto;
 		display: block;
+	  }
+	  .calendar {
+		width: 300px;
+		aspect-ratio: 1 / 1;
 	  }
 	}
 		@media (max-width: 400px) {
@@ -1200,7 +1205,7 @@
 	  }
 
 	  .line {
-		margin: 10px auto;            /* линия по центру */
+		/*margin: 10px auto;             линия по центру */
 	  }
 
 	  .hero-image {
@@ -1211,12 +1216,27 @@
 	  .hero-image img {
 		position: static;             /* ❗ убираем absolute */
 		transform: none;              /* ❗ убираем сдвиги */
-		width: min(90vw, 320px);      /* адаптивный размер */
+		width: min(90vw, 170px);      /* адаптивный размер */
 		margin: 0 auto;
 		display: block;
 	  }
+	  .calendar {
+		width: 200px;
+		aspect-ratio: 1 / 1;
+	  }
+	  .slider {
+		width: min(320px, 420px);
+		margin: 0 auto;
+	  }
+	  .slide {
+		font-size: 12px;
+		flex: 0 0 390px;
+	  }
+	  .h7 {
+		  font-size: 34px;
+	  }
 	}
-@media (max-width: 900px) {
+@media (max-width: 950px) {
   .hero,
   .light-hero,
   .white-hero,
@@ -1248,14 +1268,13 @@
     position: relative;
     right: auto;
     bottom: auto;
-    width: min(100%, 420px);
+    width: min(70%, 300px);
     margin: 20px auto 0;
   }
 
   .hero-image img {
     position: relative;
     transform: none;
-    width: 100%;
     max-width: 420px;
   }
 
@@ -1294,19 +1313,18 @@
   }
 
   .calendar {
-    width: min(100%, 420px);
+    width: 350px;
     aspect-ratio: 1 / 1;
   }
 
   .slider {
-    width: min(100%, 420px);
-    margin: 0 auto;
+    width: min(420px, 500px);
+    margin: 0 auto;    
   }
 
   .slider-nav {
     justify-content: center;
   }
-
   .box {
     width: min(100%, 90vw);
     padding: clamp(20px, 4vw, 40px);
@@ -1331,11 +1349,15 @@
     width: min(100%, 90vw);
     padding: clamp(20px, 4vw, 30px);
   }
+  .slide {
+	font-size: 20px;
+	flex: 0 0 420px;
+  }
 }
 
 @media (max-width: 600px) {
   .hero {
-    min-height: auto;
+    min-height: 500px;
     padding-top: 28px;
     padding-bottom: 28px;
   }
@@ -1344,16 +1366,17 @@
   .hero h2,
   .light-hero h3,
   .h4,
-  .h5,
-  .h7 {
+  .h5 {
     font-size: clamp(28px, 10vw, 52px);
   }
 
   .hero h1 {
-    font-size: clamp(34px, 10vw, 58px);
+    font-size: clamp(50px, 10vw, 58px);
   }
 
-  .hero h2,
+  .hero h2{
+	font-size: clamp(20px, 4vw, 18px);
+  }
   .time,
   .text,
   .details,
@@ -1362,7 +1385,7 @@
   .map-button,
   input,
   .send-button {
-    font-size: clamp(12px, 4vw, 18px);
+    font-size: clamp(14px, 4vw, 18px);
   }
 
   .calendar-weekdays,
@@ -1380,5 +1403,71 @@
 
   .brush {
     display: none;
+  }
+  .calendar {
+    width: 200px;
+    aspect-ratio: 1 / 1;
+  }
+   .slider {
+    width: min(320px, 420px);
+    margin: 0 auto;
+  }
+   .slide {
+	font-size: 14px;
+	flex: 0 0 320px;
+  }
+}
+@media (min-width: 1024px) {
+   .slider {
+    width: 500px;
+	height: 400px;
+    margin: 0 auto;
+  }
+   .slide {
+	font-size: 28px;
+	flex: 0 0 460px;
+  }
+  .wrapper {
+	height: 700px;
+  }
+  .box {
+    width: 800px;
+	height: 500px;
+  }
+  .details-dress,
+  .location p, .white-hero p  {
+	font-size: 30px;
+  }
+  .details-form, .send-button {
+	font-size: 25px;
+  }
+  h3, h4, h5, .timing-title {
+	font-size: 70px;
+  }
+  .hero-wish {
+	height: 800px;
+  }
+  h5 {
+	margin: 20px 0 30px 0;
+  }
+  .hero-wish::before {
+	background-size: 800px;
+	background-position: 10px 100px
+  }
+  .line-w2, .line-b2, .line-b, .line, .line-w {
+	width: 250px;
+  }
+  .date2 {
+	font-size: 40px;
+  }
+  .form-hero {
+	max-width: 700px;
+  }
+  input {
+	font-size: 28px;
+	max-width: 550px;
+  }
+  .radio-group {
+	font-size: 22px;
   }
 }
