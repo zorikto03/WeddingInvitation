@@ -48,7 +48,11 @@ function sendMail(event) {
     alert("Введите имя");
     return;
   }
-
+  if (!attend) {
+  alert("Пожалуйста, укажите, планируете ли Вы присутствовать.");
+  return;
+}
+  
   // 👉 СРАЗУ показываем модалку
   showSuccessMessage();
 
