@@ -32,8 +32,10 @@ function sendMail(event) {
   const name = inputs[0].value;
   const guest = inputs[1].value;
   const attend = document.querySelector('input[name="attend"]:checked');
+  const invitedBy = document.querySelector('input[name="invitedBy"]:checked');
 
   const attendValue = attend ? attend.value : "Не указано";
+  const invitedByValue = invitedBy ? invitedBy.value : "Не указано";
 
   let attendText = "";
   if (attendValue === "yes") {
@@ -43,6 +45,14 @@ function sendMail(event) {
   } else {
     attendText = "Не указано";
   }
+let attendTextInvite = "";
+if (invitedByValue === "husband") {
+  attendTextInvite = "Жених";
+} else if (invitedByValue === "wife") {
+  attendTextInvite = "Невеста";
+} else {
+  attendTextInvite = "Не указано";
+}
 
   if (!name) {
     alert("Введите имя");
@@ -52,18 +62,27 @@ function sendMail(event) {
   alert("Пожалуйста, укажите, планируете ли Вы присутствовать.");
   return;
 }
-  
+  if (!invitedBy) {
+  alert("Укажите, с чьей стороны Вы приглашены.");
+  return;
+}
   // 👉 СРАЗУ показываем модалку
   showSuccessMessage();
-
+console.log({
+  name: name,
+  attend: attendText,
+  guest: guest || "Нет",
+  invitedBy: attendTextInvite
+});
   // 👉 а запрос отправляем в фоне
-  fetch("https://script.google.com/macros/s/AKfycbyikm0yisNLA0AdVGqGs_eB-K6uR2zr4_cT7B4Bfzk2WIS6JDW341PBETWbPIs6tJyn/exec", {
+  fetch("https://script.google.com/macros/s/AKfycby6BbAlzbyFPa2f0r0qpppxlP7h8BbTvQNJmBNU1ZKIFgTCcgqaTNgc2YxYAjdgYKjP/exec", {
     method: "POST",
     mode: "no-cors",
     body: JSON.stringify({
       name: name,
       attend: attendText,
-      guest: guest || "Нет"
+      guest: guest || "Нет",
+	  invitedBy: attendTextInvite
     })
   });
 
